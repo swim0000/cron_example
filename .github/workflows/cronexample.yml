@@ -1,13 +1,14 @@
 name: cron_example
 
 on:
-    schedule:
-        - cron: '45 * * * *'
+  schedule:
+    - cron: '45 * * * *'
+  workflow_dispatch:
 
 jobs:
   cron_job:
-      runs-on: ubuntu-latest
-      steps: 
-          - name: first_step
-            run: echo "Hello Cron"
+    runs-on: ubuntu-latest
+    steps: 
+      - name: first_step
+        run: echo "Hello Cron"
         
