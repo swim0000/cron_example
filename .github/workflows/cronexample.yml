@@ -6,9 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  cron_job:
+  build:
     runs-on: ubuntu-latest
     steps: 
-      - name: first_step
-        run: echo "Hello Cron every 45 minutes"
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3
+      - name: python_email_script
+        env:
+          USER_EMAIL: ${{ secrets.USER_EMAIL }}
+          USER_PASS: ${{ secrets.USER_PASS }}
+        run: python email_sender.py
+
+            
+    
         
