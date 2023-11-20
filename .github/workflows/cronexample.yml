@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: first_step
-        run: echo "Hello Cron"
+        run: echo "Hello Cron every 45 minutes"
         
